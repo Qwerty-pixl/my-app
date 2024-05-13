@@ -1,17 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export class Item extends Component {
   render() {
     return (
       <div className="item">
-        <img src={"./img/" + this.props.item.img} onClick={() => this.props.onShowItem(this.props.item)}/>
+        <img 
+          src={"./img/" + this.props.item.img} 
+          onClick={() => this.props.onShowItem(this.props.item)} 
+          alt={this.props.item.alt} // Add the alt prop here
+        />
         <h2>{this.props.item.title}</h2>
         <p>{this.props.item.desc}</p>
         <b>{this.props.item.price}$</b>
-        <div className="add-to-card" onClick={() => this.props.onAdd(this.props.item)}>+</div>
+        <div className="add-to-card" onClick={() => this.props.onAdd(this.props.item)}>+</div> 
       </div>
-    )
+    );
   }
 }
 
-export default Item
+export default Item;
