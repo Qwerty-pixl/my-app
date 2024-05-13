@@ -11,6 +11,7 @@ class App extends React.Component {
       orders: [],
       currentItems: [],
       items: [
+        
         {
           id: 1,
           title: 'Chair-white',
