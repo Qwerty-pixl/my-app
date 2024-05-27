@@ -10,18 +10,30 @@ export class Categories extends Component {
                     name: 'Все'
                 },
                 {
-                    key: 'chairs',
-                    name: 'стулья'
+                    key: 'ring',
+                    name: 'Кольца'
                 }, {
-                    key: 'tables',
-                    name: 'столы'
+                    key: 'pendants',
+                    name: 'Подвески'
                 },
                 {
-                    key: 'sofa',
-                    name: 'диваны'
+                    key: 'earrings',
+                    name: 'Серьги'
                 }, {
-                    key: 'bed',
-                    name: 'кровать'
+                    key: 'pirsings',
+                    name: 'Пирсинги'
+                },
+                {
+                    key: 'keychains',
+                    name: 'Брелоки'
+                },
+                {
+                    key: 'braslet',
+                    name: 'Браслеты'
+                },
+                {
+                    key: 'chains',
+                    name: 'Цепи'
                 },
 
 

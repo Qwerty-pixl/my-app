@@ -1,0 +1,65 @@
+.di-section {
+    position: relative;
+    height: 100vh;
+    background: url('../../img/3\ \(1\).jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 50px;
+}
+
+.di-text {
+    color: #404759;
+    max-width: 600px;
+}
+
+.di-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.di-text p {
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .di-section {
+        padding: 0 10px;
+        /* Уменьшил отступы для мобильных устройств */
+    }
+
+    .di-text {
+        max-width: 100%;
+    }
+
+    .di-text h1 {
+        font-size: 2.5rem;
+        /* Уменьшил размер заголовка для мобильных устройств */
+    }
+
+    .di-text p {
+        font-size: 1.2rem;
+        /* Уменьшил размер текста для мобильных устройств */
+    }
+}
+
+.eng_wrapper {
+    display: flex;
+    padding: 80px;
+}
+
+.eng_right {
+    background: url(../../img/rj.jpg) no-repeat;
+    width: 800px;
+    height: 500px;
+}
+
+.eng_txt {
+    color: #404759;
+
+}
+
+.eng_tit {
+    color: #404759;
+
+}

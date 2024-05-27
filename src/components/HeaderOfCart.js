@@ -22,12 +22,8 @@ export default function Header(props) {
   return (
     <header>
       <div>
-        <span className="logo">House Staff</span>
-        <ul className="nav">
-          <li>Про нас</li>
-          <li>Контакты</li>
-          <li>Кабинет</li>
-        </ul>
+        <span className="logo">Adornia</span>
+        
         <FaShoppingCart onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shop-cart-button ${cartOpen && 'active'}`} />
 
         {cartOpen && (
@@ -37,7 +33,9 @@ export default function Header(props) {
           </div>
         )}
       </div>
-      <div className="presentation"></div>
+      <div className="presentation">
+        
+      </div>
     </header>
   )
 }

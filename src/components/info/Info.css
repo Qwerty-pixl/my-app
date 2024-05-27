@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Freehand&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.info_tit {
+    width: 700px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 80px;
+    text-align: left;
+    padding: 50px;
+}
+
+.block{
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.info_txt{
+    width: 300px;
+}
+.right_info img {
+    width: 570px;
+}
+.pic{
+    width: 300px;
+}
+.pictu{
+    width: 670px;
+}
+.pi{
+    width: 570px;
+}

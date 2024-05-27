@@ -1,0 +1,98 @@
+/* Основные стили для футера */
+.footer {
+    background-color: #404759;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+  }
+  
+  .footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .footer .footer-section {
+    flex: 1;
+    margin: 10px;
+  }
+  
+  .footer .footer-section h1,
+  .footer .footer-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+  }
+  
+  .footer .footer-section .logo-text span {
+    color: #ff4081;
+  }
+  
+  .footer .footer-section p,
+  .footer .footer-section .contact span,
+  .footer .footer-section ul li a {
+    font-size: 1em;
+  }
+  
+  .footer .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer .footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .footer .footer-section ul li a:hover {
+    color: #ff4081;
+  }
+  
+  .footer .social-links a {
+    font-size: 1.5em;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .footer .social-links a:hover {
+    transform: scale(1.2);
+  }
+  
+  .footer .footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9em;
+  }
+  
+  /* Адаптивные стили */
+  @media (max-width: 768px) {
+    .footer .footer-content {
+      flex-direction: column;
+    }
+  
+    .footer .footer-section {
+      margin: 20px 0;
+    }
+  }
+  
+  /* Скрытый текст для экранных ридеров */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  

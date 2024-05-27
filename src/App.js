@@ -1,114 +1,60 @@
-import React from 'react'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Items from './components/Items'
-import Categories from './components/Categories'
-import ShowFullItem from './components/ShowFullItem'
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      orders: [],
-      currentItems: [],
-      items: [
-        
-        {
-          id: 1,
-          title: 'Chair-white',
-          img: "white-chair.jpeg",
-          desc: "Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.",
-          category: 'chairs',
-          price: '49.99'
-        },
-        {
-          id: 2,
-          title: 'Chair-grey',
-          img: "grey-chair.jpeg",
-          desc: "Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.",
-          category: 'chairs',
-          price: '49.99'
-        },
-        {
-          id: 3,
-          title: 'sofa',
-          img: "sofa.jpg",
-          desc: "Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.",
-          category: 'sofa',
-          price: '139.99'
-        },
-        {
-          id: 4,
-          title: 'table',
-          img: "table.jpg",
-          desc: "Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.",
-          category: 'tables',
-          price: '129.99'
-        },
-        {
-          id: 5,
-          title: 'bed',
-          img: "bed.jpg",
-          desc: "Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.",
-          category: 'bed',
-          price: '150'
-        },
-        {
-          id: 6,
-          title: 'bed',
-          img: "bed.jpg",
-          desc: "Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.",
-          category: 'bed',
-          price: '150'
-        }
-      ],
-      showFullItem: false,
-      fullItem: {}
-    }
-    this.state.currentItems = this.state.items
-    this.addToOrder = this.addToOrder.bind(this)
-    this.deleteOrder = this.deleteOrder.bind(this)
-    this.chooseCategory = this.chooseCategory.bind(this)
-    this.onShowItem = this.onShowItem.bind(this)
+// src/App.js
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes,  NavLink } from 'react-router-dom';
+import Home from './components/Pages/Home';
+import About from './components/Pages/About';
+import Contacts from './components/Pages/Contacts';
+import Delivery from './components/Pages/Delivery'
+import Cart from './Cart';
+import './App.css'
+import Footer from './components/footer/Footer';
 
-  }
-  render() {
-    return (
-      <div className="wrapper">
-        <Header orders={this.state.orders} onDelete={this.deleteOrder} />
-        <Categories chooseCategory={this.chooseCategory} />
-        <Items onShowItem={this.onShowItem}  items={this.state.currentItems} onAdd={this.addToOrder} />
-        {this.state.showFullItem && <ShowFullItem onAdd={this.addToOrder} onShowItem={this.onShowItem} item={this.state.fullItem} />}
-        <Footer />
+const App = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+  return (
+    <>
+    <Router>
+      <div>
+        <nav>
+        <div className="burger-menu" onClick={toggleMenu}>
+            &#9776;
+          </div> 
+          <ul className={menuOpen ? 'show' : ''}>
+            <li>
+            <NavLink exact to="/" className={({ isActive }) => (isActive ? 'active' : '')}>Home</NavLink>
+            </li>
+            <li>
+            <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>About</NavLink>
+            </li>
+            <li>
+            <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}>Contact</NavLink>
+            </li>
+            <li>
+            <NavLink to="/cart" className={({ isActive }) => (isActive ? 'active' : '')}>Cart</NavLink>
+            </li>
+            <li>
+            <NavLink to="/delivery" className={({ isActive }) => (isActive ? 'active' : '')}>Delivery</NavLink>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/contact" element={<Contacts/>} />
+          <Route path="/cart" element={<Cart/>} />
+          <Route path="/delivery" element={<Delivery/>} />
+        </Routes>
       </div>
-    )
-  }
-onShowItem(item) {
-  this.setState({fullItem: item})
-  this.setState({showFullItem: !this.state.showFullItem})
-}
-  chooseCategory(category) {
-    if (category === 'all') {
-      this.setState({
-        currentItems: this.state.items
-      })
-      return
-    }
-    this.setState({
-      currentItems: this.state.items.filter(el => el.category === category)
-    })
-  }
-  deleteOrder(id) {
-    this.setState({ orders: this.state.orders.filter(el => el.id !== id) })
-  }
-  addToOrder(item) {
-    let isInArray = false
-    this.state.orders.forEach(el => {
-      if (el.id === item.id)
-        isInArray = true
-    })
-    if (!isInArray)
-      this.setState({ orders: [...this.state.orders, item] })
-  }
+    </Router>
+    
+    <Footer/>
+    </>
+  );
+};
 
-}
-export default App
+export default App;

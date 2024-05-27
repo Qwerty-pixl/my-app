@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+/* Основной стиль для навигационного контейнера */
+nav {
+  background-color: #404759;
+  padding: 8px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Стили для списка навигационных элементов */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  animation: fadeIn 1s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+/* Стили для каждого элемента списка */
+nav ul li {
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
+/* Стили для ссылок */
+nav ul li a {
+  color: #000;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Стили для ссылок при наведении */
+nav ul li a:hover {
+  background-color: #575757;
+  border-radius: 5px;
+  transform: scale(1.1);
+}
+
+/* Стили для активной ссылки */
+nav ul li a.active {
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+.burger-menu{
+  display: none;
+}
+
+/* Ключевые кадры для анимации fadeIn */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-10px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Медиа-запросы для адаптивной навигации */
+@media (max-width: 768px) {
+  .burger-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    margin-bottom: 10px;
+  }
+
+  nav ul li a {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul li a {
+    padding: 8px 10px;
   }
 }

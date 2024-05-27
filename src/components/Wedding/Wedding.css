@@ -1,0 +1,19 @@
+.wedding{
+    display: flex;
+    gap: 80px;
+    padding: 150px;
+}
+
+.wed_right{
+    display: flex;
+}
+.wed_text{
+    width: 350px;
+}
+.wed_img{
+    margin-right: 10px;
+}
+.sus{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
